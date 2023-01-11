@@ -1,0 +1,12 @@
+modin==0.11.3
+daal4py==2021.3.0
+xgboost==1.5.1
+lightgbm==3.3.1
+catboost==1.0.3
+pandas==1.3.4
+numpy==1.20.3
+seaborn==0.11.2
+matplotlib==3.4.3
+imblearn==0.0
+Flask==2.1.0
+gunicorn
