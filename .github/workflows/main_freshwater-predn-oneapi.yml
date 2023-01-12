@@ -11,6 +11,29 @@ on:
   workflow_dispatch:
 
 jobs:
+  load-artifacts:
+    runs-on: ubuntu-latest
+
+    env:
+		AZURE_BLOB_CONN_STR: 'DefaultEndpointsProtocol=https;AccountName=sidpblobstorage;AccountKey=IIzqlQiv87didmRDIUzLhq9GhZrOB1hWBgvDBBmYhp/SKMPbBYHjTc69MjbgfJdcuce3Ex2GOWN++AStVxi6WQ==;EndpointSuffix=core.windows.net'
+		STORAGE_ACC: sidpblobstorage
+		output_path: ./final_model_lgbm.pkl
+
+    steps:
+      - uses: actions/checkout@v2
+	  
+	  - name: Download the model file
+		run: |
+			az storage blob download --container-name projectcontainer --name final_model_lgbm.pkl -f "${{ env.output.path }}" -connection-string "${{ env.AZURE_BLOB_CONN_STR }}"
+  
+	  - name: 'Upload Artifact'
+        uses: actions/upload-artifact@v2
+        with:
+          name: final_model_lgbm
+          path: ${{ env.output.path }}
+
+
+
   build:
     runs-on: ubuntu-latest
 
@@ -39,7 +62,6 @@ jobs:
           path: |
             . 
             !venv/
-
   deploy:
     runs-on: ubuntu-latest
     needs: build
