@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-		AZURE_BLOB_CONN_STR: "DefaultEndpointsProtocol=https;AccountName=sidpblobstorage;AccountKey=IIzqlQiv87didmRDIUzLhq9GhZrOB1hWBgvDBBmYhp/SKMPbBYHjTc69MjbgfJdcuce3Ex2GOWN++AStVxi6WQ==;EndpointSuffix=core.windows.net"
+		AZURE_BLOB_CONN_STR: DefaultEndpointsProtocol=https;AccountName=sidpblobstorage;AccountKey=IIzqlQiv87didmRDIUzLhq9GhZrOB1hWBgvDBBmYhp/SKMPbBYHjTc69MjbgfJdcuce3Ex2GOWN++AStVxi6WQ==;EndpointSuffix=core.windows.net
 		STORAGE_ACC: sidpblobstorage
 		output_path: ./final_model_lgbm.pkl
 
