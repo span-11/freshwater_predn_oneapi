@@ -13,19 +13,14 @@ on:
 jobs:
   load-artifacts:
     runs-on: ubuntu-latest
-
-    env:
-	STORAGE_ACC: sidpblobstorage
-	output_path: ./final_model_lgbm.pkl
-
-    steps:
+	
+	steps:
       - uses: actions/checkout@v2
-	  
-	  - name: Download the model file
-		run: |
-			az storage blob download --container-name projectcontainer --name final_model_lgbm.pkl -f "${{ env.output.path }}" -connection-string "DefaultEndpointsProtocol=https;AccountName=sidpblobstorage;AccountKey=IIzqlQiv87didmRDIUzLhq9GhZrOB1hWBgvDBBmYhp/SKMPbBYHjTc69MjbgfJdcuce3Ex2GOWN++AStVxi6WQ==;EndpointSuffix=core.windows.net"
-  
-	  - name: 'Upload Artifact'
+      - name: Download the model file
+	run: |
+		az storage blob download --account-name sidpblobstorage --container-name projectcontainer --name final_model_lgbm.pkl -f "./final_model_lgbm.pkl" -connection-string "DefaultEndpointsProtocol=https;AccountName=sidpblobstorage;AccountKey=IIzqlQiv87didmRDIUzLhq9GhZrOB1hWBgvDBBmYhp/SKMPbBYHjTc69MjbgfJdcuce3Ex2GOWN++AStVxi6WQ==;EndpointSuffix=core.windows.net"
+      
+      - name: 'Upload Artifact'
         uses: actions/upload-artifact@v2
         with:
           name: final_model_lgbm
