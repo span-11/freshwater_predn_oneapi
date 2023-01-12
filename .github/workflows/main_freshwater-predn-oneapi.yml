@@ -15,8 +15,8 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-		STORAGE_ACC: sidpblobstorage
-		output_path: ./final_model_lgbm.pkl
+	STORAGE_ACC: sidpblobstorage
+	output_path: ./final_model_lgbm.pkl
 
     steps:
       - uses: actions/checkout@v2
