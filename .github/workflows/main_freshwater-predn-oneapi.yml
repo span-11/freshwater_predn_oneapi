@@ -15,7 +15,6 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-		AZURE_BLOB_CONN_STR: DefaultEndpointsProtocol=https;AccountName=sidpblobstorage;AccountKey=IIzqlQiv87didmRDIUzLhq9GhZrOB1hWBgvDBBmYhp/SKMPbBYHjTc69MjbgfJdcuce3Ex2GOWN++AStVxi6WQ==;EndpointSuffix=core.windows.net
 		STORAGE_ACC: sidpblobstorage
 		output_path: ./final_model_lgbm.pkl
 
@@ -24,7 +23,7 @@ jobs:
 	  
 	  - name: Download the model file
 		run: |
-			az storage blob download --container-name projectcontainer --name final_model_lgbm.pkl -f "${{ env.output.path }}" -connection-string "${{ env.AZURE_BLOB_CONN_STR }}"
+			az storage blob download --container-name projectcontainer --name final_model_lgbm.pkl -f "${{ env.output.path }}" -connection-string "DefaultEndpointsProtocol=https;AccountName=sidpblobstorage;AccountKey=IIzqlQiv87didmRDIUzLhq9GhZrOB1hWBgvDBBmYhp/SKMPbBYHjTc69MjbgfJdcuce3Ex2GOWN++AStVxi6WQ==;EndpointSuffix=core.windows.net"
   
 	  - name: 'Upload Artifact'
         uses: actions/upload-artifact@v2
