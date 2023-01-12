@@ -19,11 +19,11 @@ jobs:
       - name: Download the model file
         run: |
           az storage blob download --account-name sidpblobstorage --container-name projectcontainer --name final_model_lgbm.pkl -f "./final_model_lgbm.pkl" --connection-string "DefaultEndpointsProtocol=https;AccountName=sidpblobstorage;AccountKey=IIzqlQiv87didmRDIUzLhq9GhZrOB1hWBgvDBBmYhp/SKMPbBYHjTc69MjbgfJdcuce3Ex2GOWN++AStVxi6WQ==;EndpointSuffix=core.windows.net"
-
       - name: Upload Artifact
         uses: actions/upload-artifact@v2      
         with:
           name: final_model_lgbm
+          path: ./final_model_lgbm.pkl          
   build:
     runs-on: ubuntu-latest
 
