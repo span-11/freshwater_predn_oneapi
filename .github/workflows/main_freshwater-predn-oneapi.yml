@@ -19,7 +19,6 @@ jobs:
       - name: View output - before
         run: |
           ls -lhR
-
       - name: Download the model file
         run: |
           az storage blob download --account-name sidpblobstorage --container-name projectcontainer --name final_model_lgbm.pkl -f "./final_model_lgbm.pkl" --connection-string "DefaultEndpointsProtocol=https;AccountName=sidpblobstorage;AccountKey=IIzqlQiv87didmRDIUzLhq9GhZrOB1hWBgvDBBmYhp/SKMPbBYHjTc69MjbgfJdcuce3Ex2GOWN++AStVxi6WQ==;EndpointSuffix=core.windows.net"
@@ -27,7 +26,6 @@ jobs:
       - name: View output - after
         run: |
           ls -lhR
-
       - name: Upload Artifact
         uses: actions/upload-artifact@v2      
         with:
@@ -67,6 +65,8 @@ jobs:
     environment:
       name: 'Production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
+    env:
+      scm-do-build-during-deployment: true
 
     steps:
       - name: Download artifact from build job
