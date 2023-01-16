@@ -81,7 +81,7 @@ jobs:
         run: |
           az storage blob download --account-name sidpblobstorage --container-name projectcontainer --name final_model_lgbm.pkl -f "./final_model_lgbm.pkl" --connection-string "DefaultEndpointsProtocol=https;AccountName=sidpblobstorage;AccountKey=IIzqlQiv87didmRDIUzLhq9GhZrOB1hWBgvDBBmYhp/SKMPbBYHjTc69MjbgfJdcuce3Ex2GOWN++AStVxi6WQ==;EndpointSuffix=core.windows.net"
  
-      - name: View output in build - after
+      - name: View output - after
         run: |
           ls -lhR  
           
@@ -90,6 +90,5 @@ jobs:
         id: deploy-to-webapp
         with:
           app-name: 'freshwater-predn-oneapi'
-          scm-do-build-during-deployment: true
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_67BF69C200534166BE462BD37FC46B05 }}
