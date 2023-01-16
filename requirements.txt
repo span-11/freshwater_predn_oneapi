@@ -25,7 +25,6 @@ pillow
 pip
 plotly
 pyparsing
-python
 python-dateutil
 python-graphviz
 pytz
