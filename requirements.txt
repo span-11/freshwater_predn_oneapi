@@ -3,7 +3,7 @@ gunicorn
 daal==2021.6.0
 daal4py==2021.6.3
 dask==2022.1.1
-modin==0.15.2
+modin==0.11.3
 numpy==1.23.2
 pandas==1.4.3
 scikit-learn==1.1.2
