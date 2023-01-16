@@ -6,7 +6,7 @@ import os
 
 print(os.getcwd())
 print(os.listdir())
-model=pickle.load(open('/final_model_lgbm.pkl','rb'))
+model=pickle.load(open('final_model_lgbm.pkl','rb'))
 
 app=Flask(__name__)
 
