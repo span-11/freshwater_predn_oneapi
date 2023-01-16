@@ -1,3 +1,4 @@
+pip==22.3.1
 catboost==1.0.3
 certifi==2022.12.7
 click==8.1.3
