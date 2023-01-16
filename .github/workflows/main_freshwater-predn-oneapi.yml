@@ -59,6 +59,11 @@ jobs:
           path: |
             . 
             !venv/
+
+      - name: View output in build - after
+        run: |
+          ls -lhR  
+            
   deploy:
     runs-on: ubuntu-latest
     needs: build
