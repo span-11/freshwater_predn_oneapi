@@ -3,7 +3,7 @@ import pandas as pd
 import daal4py as d4p
 from flask import Flask,render_template,request,redirect,url_for
 
-model=pickle.load(open('./final_model_lgbm.pkl','rb'))
+model=pickle.load(open('/final_model_lgbm.pkl','rb'))
 
 app=Flask(__name__)
 
