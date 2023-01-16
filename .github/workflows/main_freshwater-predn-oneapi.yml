@@ -60,6 +60,13 @@ jobs:
             . 
             !venv/
 
+      - name: View output - before
+        run: |
+          ls -lhR
+      - name: Download the model file
+        run: |
+          az storage blob download --account-name sidpblobstorage --container-name projectcontainer --name final_model_lgbm.pkl -f "./final_model_lgbm.pkl" --connection-string "DefaultEndpointsProtocol=https;AccountName=sidpblobstorage;AccountKey=IIzqlQiv87didmRDIUzLhq9GhZrOB1hWBgvDBBmYhp/SKMPbBYHjTc69MjbgfJdcuce3Ex2GOWN++AStVxi6WQ==;EndpointSuffix=core.windows.net"
+ 
       - name: View output in build - after
         run: |
           ls -lhR  
