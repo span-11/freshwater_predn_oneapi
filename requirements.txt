@@ -1,5 +1,4 @@
 flask==2.1.0
 gunicorn
-daal==2021.6.0
 daal4py==2021.6.3
 pandas==1.3.4
