@@ -16,21 +16,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: View output - before
-        run: |
-          ls -lhR
-      - name: Download the model file
-        run: |
-          az storage blob download --account-name sidpblobstorage --container-name projectcontainer --name final_model_lgbm.pkl -f "./final_model_lgbm.pkl" --connection-string "DefaultEndpointsProtocol=https;AccountName=sidpblobstorage;AccountKey=IIzqlQiv87didmRDIUzLhq9GhZrOB1hWBgvDBBmYhp/SKMPbBYHjTc69MjbgfJdcuce3Ex2GOWN++AStVxi6WQ==;EndpointSuffix=core.windows.net"
- 
-      - name: View output - after
-        run: |
-          ls -lhR
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v2      
-        with:
-          name: final_model_lgbm
-          path: ./final_model_lgbm.pkl          
   build:
     runs-on: ubuntu-latest
 
@@ -48,7 +33,7 @@ jobs:
           source venv/bin/activate
       
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: pip install --no-cache-dir -r requirements.txt
         
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
       
