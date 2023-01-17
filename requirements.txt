@@ -1,4 +1,5 @@
 daal4py==2023.0.1
+scikit-learn-intelex==2023.0.1
 flask==2.2.2
 pandas==1.5.2
 gunicorn==20.1.0
