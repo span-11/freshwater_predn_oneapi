@@ -32,22 +32,6 @@ jobs:
           python -m venv venv
           source venv/bin/activate
       
-      - name: Install flask
-        run: pip install flask
- 
-      
-      - name: Install pandas
-        run: pip install pandas
- 
-       
-      - name: Install daal4py
-        run: pip install daal4py==2021.3.0
- 
-      
-      - name: Install gunicorn
-        run: pip install gunicorn
- 
- 
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
       
       - name: Upload artifact for deployment jobs
@@ -82,6 +66,9 @@ jobs:
       - name: View output - after
         run: |
           ls -lhR  
+
+      - name: Install packages
+        run: pip install -r requirements.txt
 
       - name: Check packages installed
         run: pip list
