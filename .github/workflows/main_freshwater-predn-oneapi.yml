@@ -8,11 +8,6 @@ on:
   push:
     branches:
       - main
-  workflow_dispatch:
-
-env:
-  WEBAPP_NAME:'freshwater-predn-oneapi' 
-  RESOURCE_GROUP: 'rg_sidharth_panigrahi'
 
 jobs:
   load-artifacts:
@@ -57,6 +52,9 @@ jobs:
     environment:
       name: 'Production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
+    env:
+      WEBAPP_NAME: 'freshwater-predn-oneapi'
+      RESOURCE_GROUP: 'rg_sidharth_panigrahi'
 
     steps:
       - name: Download artifact from build job
