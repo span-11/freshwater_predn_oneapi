@@ -31,7 +31,13 @@ jobs:
         run: |
           python -m venv venv
           source venv/bin/activate
-      
+
+      - name: Install packages
+        run: pip install -r requirements.txt
+
+      - name: Check packages installed
+        run: pip list
+
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
       
       - name: Upload artifact for deployment jobs
@@ -66,12 +72,6 @@ jobs:
       - name: View output - after
         run: |
           ls -lhR  
-
-      - name: Install packages
-        run: pip install -r requirements.txt
-
-      - name: Check packages installed
-        run: pip list
 
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v2
