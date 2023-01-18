@@ -53,7 +53,7 @@ jobs:
       name: 'Production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
     env:
-      WEBAPP_NAME: 'freshwater-predn-oneapi'
+      WEBAPP_NAME: 'myApp'
       RESOURCE_GROUP: 'rg_sidharth_panigrahi'
 
     steps:
