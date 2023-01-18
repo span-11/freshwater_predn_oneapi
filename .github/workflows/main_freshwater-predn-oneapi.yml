@@ -75,8 +75,8 @@ jobs:
       - name: Configure deployment and runtime settings on the webapp
         run: |
           az configure --defaults group=rg_sidharth_panigrahi
-          az webapp config appsettings --name "freshwater-predn-oneapi" --settings SCM_DO_BUILD_DURING_DEPLOYMENT=true FLASK_ENV=production
-          az webapp config set --name "freshwater-predn-oneapi" --startup-file "gunicorn --bind=0.0.0.0 --timeout 600 app:app"
+          az webapp config appsettings --name freshwater-predn-oneapi --settings SCM_DO_BUILD_DURING_DEPLOYMENT=true FLASK_ENV=production
+          az webapp config set --name freshwater-predn-oneapi --startup-file "gunicorn --bind=0.0.0.0 --timeout 600 app:app"
 
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v2
