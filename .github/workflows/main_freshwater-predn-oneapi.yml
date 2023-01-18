@@ -53,7 +53,7 @@ jobs:
       name: 'Production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
     env:
-      WEBAPP_NAME: 'myApp'
+      WEBAPP_NAME: 'freshwater-predn-oneapi'
       RESOURCE_GROUP: 'rg_sidharth_panigrahi'
 
     steps:
@@ -82,13 +82,10 @@ jobs:
       - name: Configure deployment and runtime settings on the webapp
         run: |
           az configure --defaults group=${{ env.RESOURCE_GROUP }}
-          az webapp config appsettings --name ${{ env.WEBAPP_NAME }} --settings SCM_DO_BUILD_DURING_DEPLOYMENT=true FLASK_ENV=production
+          az webapp config appsettings set --name ${{ env.WEBAPP_NAME }} --settings SCM_DO_BUILD_DURING_DEPLOYMENT=true FLASK_ENV=production
           az webapp config set --name ${{ env.WEBAPP_NAME }} --startup-file "gunicorn --bind=0.0.0.0 --timeout 600 app:app"
 
-      - name: 'Deploy to Azure Web App'
+      - name: Deploy to App Service
         uses: azure/webapps-deploy@v2
-        id: deploy-to-webapp
         with:
-          app-name: 'freshwater-predn-oneapi'
-          slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_67BF69C200534166BE462BD37FC46B05 }}
+          app-name: ${{ env.WEBAPP_NAME}}
