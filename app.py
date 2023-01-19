@@ -66,5 +66,5 @@ def manual_entry():
         # else:
         #     return str("The source is not likely to be a freshwater")
 
-# if __name__=="__main__":
-#     app.run(debug=True)
+if __name__=="__main__":
+    app.run()
