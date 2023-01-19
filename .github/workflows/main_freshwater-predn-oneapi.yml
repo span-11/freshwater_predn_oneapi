@@ -30,11 +30,6 @@ jobs:
         run: |
           python -m venv venv
           source venv/bin/activate
-      - name: Install packages
-        run: pip install -r requirements.txt
-
-      - name: Check packages installed
-        run: pip list
 
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
       
@@ -84,6 +79,9 @@ jobs:
           az configure --defaults group=${{ env.RESOURCE_GROUP }}
           az webapp config appsettings set --name ${{ env.WEBAPP_NAME }} --settings SCM_DO_BUILD_DURING_DEPLOYMENT=true FLASK_ENV=production
           az webapp config set --name ${{ env.WEBAPP_NAME }} --startup-file "gunicorn --bind=0.0.0.0 --timeout 600 app:app"
+
+      - name: Install packages
+        run: python 3.8 -m pip install -r requirements.txt
 
       - name: Check packages installed
         run: pip list
