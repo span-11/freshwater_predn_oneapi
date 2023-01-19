@@ -81,7 +81,7 @@ jobs:
           az webapp config set --name ${{ env.WEBAPP_NAME }} --startup-file "gunicorn --bind=0.0.0.0 --timeout 600 app:app"
 
       - name: Install packages
-        run: python 3.8 -m pip install -r requirements.txt
+        run: pip install -r requirements.txt
 
       - name: Check packages installed
         run: pip list
