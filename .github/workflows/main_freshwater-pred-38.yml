@@ -46,6 +46,9 @@ jobs:
     environment:
       name: 'Production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
+    env:
+      WEBAPP_NAME: 'freshwater-pred-38'
+      RESOURCE_GROUP: 'rg_sidharth_panigrahi'      
 
     steps:
       - name: Download artifact from build job
@@ -53,7 +56,19 @@ jobs:
         with:
           name: python-app
           path: .
-          
+
+      - name: View output - before
+        run: |
+          ls -lhR
+
+      - name: Download the model file
+        run: |
+          az storage blob download --account-name sidpblobstorage --container-name projectcontainer --name final_model_lgbm.pkl -f "./final_model_lgbm.pkl" --connection-string "DefaultEndpointsProtocol=https;AccountName=sidpblobstorage;AccountKey=IIzqlQiv87didmRDIUzLhq9GhZrOB1hWBgvDBBmYhp/SKMPbBYHjTc69MjbgfJdcuce3Ex2GOWN++AStVxi6WQ==;EndpointSuffix=core.windows.net"
+ 
+      - name: View output - after
+        run: |
+          ls -lhR  
+
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v2
         id: deploy-to-webapp
