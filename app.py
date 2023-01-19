@@ -2,10 +2,7 @@ import pickle
 import pandas as pd
 import daal4py as d4p
 from flask import Flask,render_template,request,redirect,url_for
-import os 
 
-# print(os.getcwd())
-# print(os.listdir())
 model=pickle.load(open('final_model_lgbm.pkl','rb'))
 
 app=Flask(__name__)
@@ -30,7 +27,7 @@ def user_file_upload():
         uploaded_file=request.files["uploaded_file"]
         filename_file=uploaded_file.filename
         if '.csv' in filename_file:
-            input_file=pd.read_csv(filename_file)
+            input_file=pd.read_csv(uploaded_file)
             if input_file.shape[0]!=0:
                 if len(set(input_file.columns).intersection(prediction_features))==14:
                     input_file['Color_Recoded']=input_file['Color'].map({'Colorless':1,'Near Colorless':2,'Faint Yellow':3,'Light Yellow':4,'Yellow':5})
@@ -61,7 +58,3 @@ def manual_entry():
         # return form_inputs.to_html()
         prediction=d4p.gbt_classification_prediction(nClasses=2,resultsToEvaluate="computeClassLabels|computeClassProbabilities",fptype='float').compute(form_inputs, model).prediction[0][0]
         return str("Target :")+str(prediction)
-        # if prediction==1:
-        #     return str("The source is likely to be a fresh-water")
-        # else:
-        #     return str("The source is not likely to be a freshwater")
