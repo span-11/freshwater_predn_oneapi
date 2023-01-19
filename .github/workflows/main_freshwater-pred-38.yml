@@ -79,8 +79,8 @@ jobs:
           az configure --defaults group=${{ env.RESOURCE_GROUP }} 
           az webapp config appsettings set --name ${{ env.WEBAPP_NAME }} --settings \
               SCM_DO_BUILD_DURING_DEPLOYMENT=true \
-              FLASK_ENV=production --detect false
-          az webapp config set --detect false --name ${{ env.WEBAPP_NAME }} \
+              FLASK_ENV=production
+          az webapp config set --name ${{ env.WEBAPP_NAME }} \
             --startup-file "gunicorn --bind=0.0.0.0 --timeout 600 app:app"
       - name: Deploy to App Service
         uses: azure/webapps-deploy@v2
