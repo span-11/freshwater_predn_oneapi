@@ -65,6 +65,3 @@ def manual_entry():
         #     return str("The source is likely to be a fresh-water")
         # else:
         #     return str("The source is not likely to be a freshwater")
-
-if __name__=="__main__":
-    app.run()
