@@ -1,0 +1,15 @@
+<html>
+<body style="background-color:beige;"></body>
+<h1 style="font-family: Arial, Helvetica, sans-serif;font-size: 30;">Freshwater Prediction</h1>
+<br>
+    {% for table in tables %}
+                {{ table|safe }}
+    {% endfor %}
+<br><br><br><br>
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+<td>&nbsp;</td><td>&nbsp;</td><input type="button" onclick="document.location='https://freshwater-pred-38.azurewebsites.net/'" name="Main_Menu" value="Go to Main Menu" href="http://google.com" style="font-family:'Orator Std';background-color:beige; border-color:beige;outline:beige;"></input>
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+<td>&nbsp;</td><input type="button" onclick="document.location='https://freshwater-pred-38.azurewebsites.net/single_entry'" name="Prevous_Page" value="Go back to Previous Page" style="font-family:'Orator Std';background-color:beige; border-color:beige;outline:beige;"></input>
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+<td>&nbsp;</td><input type="button" onclick="document.location='https://freshwater-pred-38.azurewebsites.net/file_upload'" name="Upload_File" value="Predict using File Upload" style="font-family:'Orator Std';background-color:beige; border-color:beige;outline:beige;"></input>
+</html>

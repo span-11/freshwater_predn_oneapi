@@ -1,6 +1,89 @@
-<h1>Freshwater Prediction</h1>
-<h5>Please Upload the input csv file</h5>
+<html>
+<body style="background-color:beige;"></body>
+<h1 style="font-family: Arial, Helvetica, sans-serif;font-size: 30;">Freshwater Prediction</h1>
+<br><br><br>
+    <style>
+        table {
+        font-family: arial, sans-serif;
+        font-size: 11;
+        border-collapse: collapse;
+        width: 100%;
+        }
+        
+        td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+        }
+        
+        tr:nth-child(even) {
+        background-color: lightgrey;
+        }
+    </style>
 <form method="post" enctype="multipart/form-data">
-    <input type="file" name="uploaded_file">
-    <input type="submit" value="Upload Chosen File">
+    <input type="file" value="Select File" name="uploaded_file" ><td>&nbsp;</td>
+    <input type="submit" name="Predict_View" value="Predict & View" style="background-color:powderblue; border-color: #dddddd; border-collapse: collapse;"><td>&nbsp;</td><td>&nbsp;</td>
+    <input type="submit" name="Predict_Download" value="Predict & Download" style="background-color:powderblue; border-color: #dddddd; border-collapse: collapse;"><td>&nbsp;</td><td>&nbsp;</td>
+    <td>&nbsp;</td><td>&nbsp;</td><input type="reset" value="Reset" style="background-color:powderblue; border-color: #dddddd; border-collapse: collapse;"><td>&nbsp;</td><td>&nbsp;</td>
+    <br><br><br>
+    <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+    <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+    <h5 style="font-weight:normal; font-family: arial, sans-serif ;font-size:13;">
+        1. Click on 'Choose File' button and select the input CSV file <br>
+        2. For Predictions:<br>
+        <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+        a. Click on 'Predict & View' button to get the prediction on separate HTML page <br>
+        <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+        b. Click on 'Predict & Download' button to predict and export<br>        
+        3. For best experience, please use Microsoft Edge explorer <br>
+    </h5><br><br>    
+    <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+    <h4 style="font-size: 12;font-family: Arial, Helvetica, sans-serif;font-weight: normal;font-style: italic;">Expected Input Data Format (input column names are case sensitive):</h4>
+    <table> 
+        <tr>
+            <th style="text-align: center;font-weight: normal;">Chloride</th>
+            <th style="text-align: center;font-weight: normal;">Chlorine</th>
+            <th style="text-align: center;font-weight: normal;">Color</th>
+            <th style="text-align: center;font-weight: normal;">Copper</th>
+            <th style="text-align: center;font-weight: normal;">Fluoride</th>
+            <th style="text-align: center;font-weight: normal;">Iron</th>
+            <th style="text-align: center;font-weight: normal;">Manganese</th>
+            <th style="text-align: center;font-weight: normal;">Nitrate</th>
+            <th style="text-align: center;font-weight: normal;">Odor</th>
+            <th style="text-align: center;font-weight: normal;">Sulfate</th>
+            <th style="text-align: center;font-weight: normal;">Total Dissolved Solids</th>
+            <th style="text-align: center;font-weight: normal;">Turbidity</th>
+            <th style="text-align: center;font-weight: normal;">Zinc</th>
+            <th style="text-align: center;font-weight: normal;">pH</th>
+        </tr>
+        <tr>
+            <td style="text-align: center;">225.0</td>
+            <td style="text-align: center;">3.2</td>
+            <td style="text-align: center;">Colorless</td>
+            <td style="text-align: center;">0.16</td>
+            <td style="text-align: center;">0.07</td>
+            <td style="text-align: center;">0.00000504</td>
+            <td style="text-align: center;">0.00000029</td>
+            <td style="text-align: center;">5.70</td>
+            <td style="text-align: center;">1.03</td>
+            <td style="text-align: center;">247.84</td>
+            <td style="text-align: center;">80.02</td>
+            <td style="text-align: center;">0.15</td>
+            <td style="text-align: center;">0.40</td>
+            <td style="text-align: center;">5.39</td>            
+        </tr>
+    </table>
+    <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+    <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+    <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+    <br><br><br><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+    <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+    <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+    <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+    <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+    <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+    <td>&nbsp;</td><td>&nbsp;</td><input type="submit" name="Main_Menu" value="Go to Main Menu" style="font-family:'Orator Std';background-color:beige; border-color:beige;outline:beige;"></input>
+    <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  
+    <input type="submit" name="Manual_Entry" value="Predict using Manual Entry" style="font-family:'Orator Std';background-color:beige; border-color:beige;outline:beige;"></input>  
 </form>
+</html>
