@@ -42,7 +42,7 @@ Attribute 'Source' was transformed into continuous variable using one-hot encodi
 
 The dataset was balanced using imblearn. Boosting algorithm fared better, and within them LightGBM fared the best. The run time was accelerated by using sklearn library of OneAPI tool
 
-![image](https://user-images.githubusercontent.com/122376420/221431612-751652e1-b6da-484e-add5-c8dcfed8de61.png)
+![image](https://user-images.githubusercontent.com/122376420/221431928-0d07d169-2f0d-4281-aaa0-8658ca2ed72e.png)
 
 
 From the set of 22 input features were able to drill down to 14 primary attributes needed for the prediction : Chloride,Chlorine,Color,Copper,Fluoride,Iron,Manganese,Nitrate,Odor,Sulfate,Total Dissolved Solids,Turbidity,Zinc,pH
@@ -84,7 +84,7 @@ pip install -r requirements.txt
 ```
 5. Copy the data into the folder from this link (https://s3-ap-southeast-1.amazonaws.com/he-public-data/datasetab75fb3.zip). Unzip it. 
 
-6. Open the ipynb file and 
+6. Open the ipynb file 'Code_FreshwaterPrediction.ipynb' and 
 
 change the path in the ipynb file from 
 
