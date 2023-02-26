@@ -42,7 +42,7 @@ Attribute 'Source' was transformed into continuous variable using one-hot encodi
 
 The dataset was balanced using imblearn. Boosting algorithm fared better, and within them LightGBM fared the best. The run time was accelerated by using sklearn library of OneAPI tool
 
-![image](https://user-images.githubusercontent.com/122376420/221431928-0d07d169-2f0d-4281-aaa0-8658ca2ed72e.png)
+![image](https://user-images.githubusercontent.com/122376420/221431972-1906c422-1b22-45fd-8a1c-20bc726d58bf.png)
 
 
 From the set of 22 input features were able to drill down to 14 primary attributes needed for the prediction : Chloride,Chlorine,Color,Copper,Fluoride,Iron,Manganese,Nitrate,Odor,Sulfate,Total Dissolved Solids,Turbidity,Zinc,pH
